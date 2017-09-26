@@ -1,0 +1,16 @@
+{
+  "name": "vaadin-wrappers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "demo/index.html",
+  "scripts": {
+    "dev": "polymer serve | npm run watch",
+    "test": "polymer test",
+    "watch": "browser-sync start --proxy localhost:8081 --files 'src/*.html, src/*.js, images/*' "
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13"
+  }
+}

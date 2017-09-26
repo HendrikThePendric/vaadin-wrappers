@@ -1,0 +1,52 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/vaadin-grid/vaadin-grid.html">
+<link rel="import" href="../bower_components/vaadin-grid/vaadin-grid-keyboard-navigation-behavior.html">
+<link rel="import" href="pb-grid-column.html">
+
+<dom-module id="pb-grid">
+  <template>
+    <vaadin-grid aria-label="Array Data Example" items="[[items]]">
+  
+      <vaadin-grid-column>
+          <template class="header">First Name</template>
+          <template>[[item.firstName]]</template>
+        </vaadin-grid-column>
+  
+      <vaadin-grid-column>
+        <template class="header">Last Name</template>
+        <template>[[item.lastName]]</template>
+      </vaadin-grid-column>
+  
+    </vaadin-grid>
+  </template>
+
+  <script>
+    class PbGrid extends Polymer.Element {
+      static get is() {
+        return 'pb-grid';
+      }
+
+      static get properties() {
+        return {
+          items: {
+            type: Array,
+            value: () => []
+          }
+        }
+      }
+
+      ready() {
+        super.ready();
+        const items = [];
+        for (var i = 0; i < 100; i++) {
+          items.push({firstName: 'First Name ' + i, lastName: 'Last Name ' + i});
+        }
+        
+        this.set('items', items);
+      }
+
+    }
+    customElements.define(PbGrid.is, PbGrid);
+  </script>
+</dom-module>
+

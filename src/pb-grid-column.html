@@ -1,0 +1,36 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="pb-grid-column">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+  </template>
+
+  <script>
+    /**
+     * `vaadin-wrappers`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class PbGridColumn extends Polymer.Element {
+      static get is() { return 'pb-grid-column'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'pb-grid-columnsss'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(PbGridColumn.is, PbGridColumn);
+  </script>
+</dom-module>
